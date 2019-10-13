@@ -4,10 +4,13 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 
 <generatorConfiguration>
+
     <!--添加数据库的连接jar包的位置-->
     <classPathEntry location="D:/repository/mysql/mysql-connector-java/5.1.30/mysql-connector-java-5.1.30.jar"/>
 
     <context id="testTables" targetRuntime="MyBatis3">
+        <!-- 配置pojo的序列化 -->
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
         <commentGenerator>
             <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
             <property name="suppressAllComments" value="true" />
@@ -19,11 +22,16 @@
                         userId="root"
                         password="******">
         </jdbcConnection>
+        <!-- <jdbcConnection driverClass="oracle.jdbc.OracleDriver"
+			connectionURL="jdbc:oracle:thin:@127.0.0.1:1521:yycg"
+			userId="root"
+			password="******">
+		</jdbcConnection> -->
 
         <!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer，为 true时把JDBC DECIMAL 和
 			NUMERIC 类型解析为java.math.BigDecimal -->
         <javaTypeResolver>
-            <property name="forceBigDecimals" value="true" />
+            <property name="forceBigDecimals" value="false" />
         </javaTypeResolver>
 
         <!-- targetProject:生成PO类的位置 -->
@@ -32,7 +40,7 @@
             <!-- enableSubPackages:是否让schema作为包的后缀 -->
             <property name="enableSubPackages" value="false" />
             <!-- 从数据库返回的值被清理前后的空格 -->
-            <property name="trimStrings" value="false" />
+            <property name="trimStrings" value="true" />
         </javaModelGenerator>
 
         <!-- targetProject:mapper映射文件生成的位置 -->
@@ -52,16 +60,9 @@
 
         <!-- 指定在数据库中已经存在的表名 -->
         <table schema="" tableName="classes" />
-        <table schema="" tableName="departments" />
-        <table schema="" tableName="grade" />
-        <table schema="" tableName="major" />
-        <table schema="" tableName="permission" />
-        <table schema="" tableName="permission_role" />
-        <table schema="" tableName="score" />
-        <table schema="" tableName="student" />
-        <table schema="" tableName="teacher" />
-        <table schema="" tableName="terms" />
-        <table schema="" tableName="terms_classification" />
-        <table schema="" tableName="terms_item" />
+        <!-- 有些表的字段需要指定java类型
+		 <table schema="" tableName="">
+			<columnOverride column="" javaType="" />
+		</table> -->
     </context>
 </generatorConfiguration>
