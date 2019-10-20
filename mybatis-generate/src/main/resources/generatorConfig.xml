@@ -18,7 +18,7 @@
 
         <!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/szgl"
+                        connectionURL="jdbc:mysql://localhost:3306/bookshop"
                         userId="root"
                         password="******">
         </jdbcConnection>
@@ -60,9 +60,14 @@
 
         <!-- 指定在数据库中已经存在的表名 -->
         <table schema="" tableName="classes" />
-        <!-- 有些表的字段需要指定java类型
-		 <table schema="" tableName="">
+        <!--
+        有些表的字段需要指定java类型
+		<table schema="" tableName="">
 			<columnOverride column="" javaType="" />
-		</table> -->
+		</table>
+        <table schema="" tableName="" />
+        -->
+        <table schema="" tableName="goods" />
+        <table schema="" tableName="order" />
     </context>
 </generatorConfiguration>
