@@ -35,7 +35,11 @@
         </javaTypeResolver>
 
         <!-- targetProject:生成PO类的位置 -->
-        <javaModelGenerator targetPackage="cn.yangwanhao.bookshop.common.pojo"
+        <!-- cn.yangwanhao.bookshop.common.pojo.cart -->
+        <!-- cn.yangwanhao.bookshop.common.pojo.order -->
+        <!-- cn.yangwanhao.bookshop.common.pojo.user -->
+        <!-- cn.yangwanhao.bookshop.common.pojo.goods -->
+        <javaModelGenerator targetPackage="cn.yangwanhao.bookshop.common.pojo.user"
                             targetProject=".\src\main\java">
             <!-- enableSubPackages:是否让schema作为包的后缀 -->
             <property name="enableSubPackages" value="false" />
@@ -44,7 +48,11 @@
         </javaModelGenerator>
 
         <!-- targetProject:mapper映射文件生成的位置 -->
-        <sqlMapGenerator targetPackage="com.taotao.mapper"
+        <!-- cn.yangwanhao.bookshop.controller.user.mapper -->
+        <!-- cn.yangwanhao.bookshop.controller.cart.mapper -->
+        <!-- cn.yangwanhao.bookshop.controller.goods.mapper -->
+        <!-- cn.yangwanhao.bookshop.controller.order.mapper -->
+        <sqlMapGenerator targetPackage="cn.yangwanhao.bookshop.controller.user.mapper"
                          targetProject=".\src\main\java">
             <!-- enableSubPackages:是否让schema作为包的后缀 -->
             <property name="enableSubPackages" value="false" />
@@ -52,7 +60,7 @@
 
         <!-- targetPackage：mapper接口生成的位置 -->
         <javaClientGenerator type="XMLMAPPER"
-                             targetPackage="com.taotao.mapper"
+                             targetPackage="cn.yangwanhao.bookshop.controller.user.mapper"
                              targetProject=".\src\main\java">
             <!-- enableSubPackages:是否让schema作为包的后缀 -->
             <property name="enableSubPackages" value="false" />
@@ -67,16 +75,16 @@
         <table schema="" tableName="customer_address" />
         <table schema="" tableName="dictionary" />
         <!-- cart -->
-        <table schema="" tableName="cart" />
+        <!--<table schema="" tableName="cart" />-->
         <!-- goods -->
-        <table schema="" tableName="category" />
+        <!--<table schema="" tableName="category" />
         <table schema="" tableName="goods_base" />
         <table schema="" tableName="goods_books" />
-        <table schema="" tableName="goods_info" />
+        <table schema="" tableName="goods_info" />-->
         <!-- order -->
-        <table schema="" tableName="order" />
+        <!--<table schema="" tableName="order" />
         <table schema="" tableName="order_goods" />
-        <table schema="" tableName="pay_record" />
+        <table schema="" tableName="pay_record" />-->
         <!--
         有些表的字段需要指定java类型
 		<table schema="" tableName="">
