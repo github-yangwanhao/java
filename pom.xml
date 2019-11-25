@@ -12,6 +12,7 @@
         <module>mybatis-generate</module>
         <module>test</module>
         <module>calculator</module>
+        <module>shop-pay-system</module>
     </modules>
 
 
