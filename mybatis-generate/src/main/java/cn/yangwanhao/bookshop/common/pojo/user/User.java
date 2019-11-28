@@ -24,7 +24,7 @@ public class User implements Serializable {
 
     private Integer isLocked;
 
-    private Integer type;
+    private Integer userType;
 
     private String lastLoginIp;
 
@@ -116,12 +116,12 @@ public class User implements Serializable {
         this.isLocked = isLocked;
     }
 
-    public Integer getType() {
-        return type;
+    public Integer getUserType() {
+        return userType;
     }
 
-    public void setType(Integer type) {
-        this.type = type;
+    public void setUserType(Integer userType) {
+        this.userType = userType;
     }
 
     public String getLastLoginIp() {

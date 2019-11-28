@@ -6,7 +6,7 @@ import java.util.Date;
 public class GoodsBase implements Serializable {
     private Long id;
 
-    private Integer status;
+    private Integer goodsStatus;
 
     private Long price;
 
@@ -20,11 +20,11 @@ public class GoodsBase implements Serializable {
 
     private Date createTime;
 
-    private Long creator;
+    private Long createUserId;
 
     private Date updateTime;
 
-    private Long mender;
+    private Long updateUserId;
 
     private static final long serialVersionUID = 1L;
 
@@ -36,12 +36,12 @@ public class GoodsBase implements Serializable {
         this.id = id;
     }
 
-    public Integer getStatus() {
-        return status;
+    public Integer getGoodsStatus() {
+        return goodsStatus;
     }
 
-    public void setStatus(Integer status) {
-        this.status = status;
+    public void setGoodsStatus(Integer goodsStatus) {
+        this.goodsStatus = goodsStatus;
     }
 
     public Long getPrice() {
@@ -92,12 +92,12 @@ public class GoodsBase implements Serializable {
         this.createTime = createTime;
     }
 
-    public Long getCreator() {
-        return creator;
+    public Long getCreateUserId() {
+        return createUserId;
     }
 
-    public void setCreator(Long creator) {
-        this.creator = creator;
+    public void setCreateUserId(Long createUserId) {
+        this.createUserId = createUserId;
     }
 
     public Date getUpdateTime() {
@@ -108,11 +108,11 @@ public class GoodsBase implements Serializable {
         this.updateTime = updateTime;
     }
 
-    public Long getMender() {
-        return mender;
+    public Long getUpdateUserId() {
+        return updateUserId;
     }
 
-    public void setMender(Long mender) {
-        this.mender = mender;
+    public void setUpdateUserId(Long updateUserId) {
+        this.updateUserId = updateUserId;
     }
 }

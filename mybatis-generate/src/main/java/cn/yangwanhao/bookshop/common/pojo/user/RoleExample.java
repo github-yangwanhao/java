@@ -304,63 +304,63 @@ public class RoleExample {
             return (Criteria) this;
         }
 
-        public Criteria andStatusIsNull() {
-            addCriterion("status is null");
+        public Criteria andRoleStatusIsNull() {
+            addCriterion("role_status is null");
             return (Criteria) this;
         }
 
-        public Criteria andStatusIsNotNull() {
-            addCriterion("status is not null");
+        public Criteria andRoleStatusIsNotNull() {
+            addCriterion("role_status is not null");
             return (Criteria) this;
         }
 
-        public Criteria andStatusEqualTo(Integer value) {
-            addCriterion("status =", value, "status");
+        public Criteria andRoleStatusEqualTo(Integer value) {
+            addCriterion("role_status =", value, "roleStatus");
             return (Criteria) this;
         }
 
-        public Criteria andStatusNotEqualTo(Integer value) {
-            addCriterion("status <>", value, "status");
+        public Criteria andRoleStatusNotEqualTo(Integer value) {
+            addCriterion("role_status <>", value, "roleStatus");
             return (Criteria) this;
         }
 
-        public Criteria andStatusGreaterThan(Integer value) {
-            addCriterion("status >", value, "status");
+        public Criteria andRoleStatusGreaterThan(Integer value) {
+            addCriterion("role_status >", value, "roleStatus");
             return (Criteria) this;
         }
 
-        public Criteria andStatusGreaterThanOrEqualTo(Integer value) {
-            addCriterion("status >=", value, "status");
+        public Criteria andRoleStatusGreaterThanOrEqualTo(Integer value) {
+            addCriterion("role_status >=", value, "roleStatus");
             return (Criteria) this;
         }
 
-        public Criteria andStatusLessThan(Integer value) {
-            addCriterion("status <", value, "status");
+        public Criteria andRoleStatusLessThan(Integer value) {
+            addCriterion("role_status <", value, "roleStatus");
             return (Criteria) this;
         }
 
-        public Criteria andStatusLessThanOrEqualTo(Integer value) {
-            addCriterion("status <=", value, "status");
+        public Criteria andRoleStatusLessThanOrEqualTo(Integer value) {
+            addCriterion("role_status <=", value, "roleStatus");
             return (Criteria) this;
         }
 
-        public Criteria andStatusIn(List<Integer> values) {
-            addCriterion("status in", values, "status");
+        public Criteria andRoleStatusIn(List<Integer> values) {
+            addCriterion("role_status in", values, "roleStatus");
             return (Criteria) this;
         }
 
-        public Criteria andStatusNotIn(List<Integer> values) {
-            addCriterion("status not in", values, "status");
+        public Criteria andRoleStatusNotIn(List<Integer> values) {
+            addCriterion("role_status not in", values, "roleStatus");
             return (Criteria) this;
         }
 
-        public Criteria andStatusBetween(Integer value1, Integer value2) {
-            addCriterion("status between", value1, value2, "status");
+        public Criteria andRoleStatusBetween(Integer value1, Integer value2) {
+            addCriterion("role_status between", value1, value2, "roleStatus");
             return (Criteria) this;
         }
 
-        public Criteria andStatusNotBetween(Integer value1, Integer value2) {
-            addCriterion("status not between", value1, value2, "status");
+        public Criteria andRoleStatusNotBetween(Integer value1, Integer value2) {
+            addCriterion("role_status not between", value1, value2, "roleStatus");
             return (Criteria) this;
         }
     }

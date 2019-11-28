@@ -3,7 +3,7 @@ package cn.yangwanhao.bookshop.common.pojo.order;
 import java.io.Serializable;
 import java.util.Date;
 
-public class PayRecord implements Serializable {
+public class TradeRecord implements Serializable {
     private Long id;
 
     private Long userId;
@@ -12,7 +12,7 @@ public class PayRecord implements Serializable {
 
     private String orderNo;
 
-    private Integer type;
+    private Integer tradeType;
 
     private Long money;
 
@@ -54,12 +54,12 @@ public class PayRecord implements Serializable {
         this.orderNo = orderNo == null ? null : orderNo.trim();
     }
 
-    public Integer getType() {
-        return type;
+    public Integer getTradeType() {
+        return tradeType;
     }
 
-    public void setType(Integer type) {
-        this.type = type;
+    public void setTradeType(Integer tradeType) {
+        this.tradeType = tradeType;
     }
 
     public Long getMoney() {

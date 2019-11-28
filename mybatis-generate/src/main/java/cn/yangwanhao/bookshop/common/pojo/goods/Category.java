@@ -5,15 +5,11 @@ import java.io.Serializable;
 public class Category implements Serializable {
     private Integer id;
 
-    private String type;
+    private String name;
 
-    private String desc;
+    private Integer parentId;
 
-    private Integer key;
-
-    private Integer parentKey;
-
-    private String value;
+    private Integer isParent;
 
     private Integer sort;
 
@@ -27,44 +23,28 @@ public class Category implements Serializable {
         this.id = id;
     }
 
-    public String getType() {
-        return type;
+    public String getName() {
+        return name;
     }
 
-    public void setType(String type) {
-        this.type = type == null ? null : type.trim();
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
     }
 
-    public String getDesc() {
-        return desc;
+    public Integer getParentId() {
+        return parentId;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc == null ? null : desc.trim();
+    public void setParentId(Integer parentId) {
+        this.parentId = parentId;
     }
 
-    public Integer getKey() {
-        return key;
+    public Integer getIsParent() {
+        return isParent;
     }
 
-    public void setKey(Integer key) {
-        this.key = key;
-    }
-
-    public Integer getParentKey() {
-        return parentKey;
-    }
-
-    public void setParentKey(Integer parentKey) {
-        this.parentKey = parentKey;
-    }
-
-    public String getValue() {
-        return value;
-    }
-
-    public void setValue(String value) {
-        this.value = value == null ? null : value.trim();
+    public void setIsParent(Integer isParent) {
+        this.isParent = isParent;
     }
 
     public Integer getSort() {

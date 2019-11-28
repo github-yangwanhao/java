@@ -782,63 +782,63 @@ public class UserExample {
             return (Criteria) this;
         }
 
-        public Criteria andTypeIsNull() {
-            addCriterion("type is null");
+        public Criteria andUserTypeIsNull() {
+            addCriterion("user_type is null");
             return (Criteria) this;
         }
 
-        public Criteria andTypeIsNotNull() {
-            addCriterion("type is not null");
+        public Criteria andUserTypeIsNotNull() {
+            addCriterion("user_type is not null");
             return (Criteria) this;
         }
 
-        public Criteria andTypeEqualTo(Integer value) {
-            addCriterion("type =", value, "type");
+        public Criteria andUserTypeEqualTo(Integer value) {
+            addCriterion("user_type =", value, "userType");
             return (Criteria) this;
         }
 
-        public Criteria andTypeNotEqualTo(Integer value) {
-            addCriterion("type <>", value, "type");
+        public Criteria andUserTypeNotEqualTo(Integer value) {
+            addCriterion("user_type <>", value, "userType");
             return (Criteria) this;
         }
 
-        public Criteria andTypeGreaterThan(Integer value) {
-            addCriterion("type >", value, "type");
+        public Criteria andUserTypeGreaterThan(Integer value) {
+            addCriterion("user_type >", value, "userType");
             return (Criteria) this;
         }
 
-        public Criteria andTypeGreaterThanOrEqualTo(Integer value) {
-            addCriterion("type >=", value, "type");
+        public Criteria andUserTypeGreaterThanOrEqualTo(Integer value) {
+            addCriterion("user_type >=", value, "userType");
             return (Criteria) this;
         }
 
-        public Criteria andTypeLessThan(Integer value) {
-            addCriterion("type <", value, "type");
+        public Criteria andUserTypeLessThan(Integer value) {
+            addCriterion("user_type <", value, "userType");
             return (Criteria) this;
         }
 
-        public Criteria andTypeLessThanOrEqualTo(Integer value) {
-            addCriterion("type <=", value, "type");
+        public Criteria andUserTypeLessThanOrEqualTo(Integer value) {
+            addCriterion("user_type <=", value, "userType");
             return (Criteria) this;
         }
 
-        public Criteria andTypeIn(List<Integer> values) {
-            addCriterion("type in", values, "type");
+        public Criteria andUserTypeIn(List<Integer> values) {
+            addCriterion("user_type in", values, "userType");
             return (Criteria) this;
         }
 
-        public Criteria andTypeNotIn(List<Integer> values) {
-            addCriterion("type not in", values, "type");
+        public Criteria andUserTypeNotIn(List<Integer> values) {
+            addCriterion("user_type not in", values, "userType");
             return (Criteria) this;
         }
 
-        public Criteria andTypeBetween(Integer value1, Integer value2) {
-            addCriterion("type between", value1, value2, "type");
+        public Criteria andUserTypeBetween(Integer value1, Integer value2) {
+            addCriterion("user_type between", value1, value2, "userType");
             return (Criteria) this;
         }
 
-        public Criteria andTypeNotBetween(Integer value1, Integer value2) {
-            addCriterion("type not between", value1, value2, "type");
+        public Criteria andUserTypeNotBetween(Integer value1, Integer value2) {
+            addCriterion("user_type not between", value1, value2, "userType");
             return (Criteria) this;
         }
 

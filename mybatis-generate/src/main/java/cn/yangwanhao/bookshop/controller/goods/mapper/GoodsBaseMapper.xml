@@ -3,16 +3,16 @@
 <mapper namespace="cn.yangwanhao.bookshop.controller.goods.mapper.GoodsBaseMapper" >
   <resultMap id="BaseResultMap" type="cn.yangwanhao.bookshop.common.pojo.goods.GoodsBase" >
     <id column="id" property="id" jdbcType="BIGINT" />
-    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="goods_status" property="goodsStatus" jdbcType="INTEGER" />
     <result column="price" property="price" jdbcType="BIGINT" />
     <result column="stock" property="stock" jdbcType="INTEGER" />
     <result column="category" property="category" jdbcType="INTEGER" />
     <result column="goods_version" property="goodsVersion" jdbcType="BIGINT" />
     <result column="goods_buy_version" property="goodsBuyVersion" jdbcType="BIGINT" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
-    <result column="creator" property="creator" jdbcType="BIGINT" />
+    <result column="create_user_id" property="createUserId" jdbcType="BIGINT" />
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
-    <result column="mender" property="mender" jdbcType="BIGINT" />
+    <result column="update_user_id" property="updateUserId" jdbcType="BIGINT" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -73,8 +73,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, status, price, stock, category, goods_version, goods_buy_version, create_time, 
-    creator, update_time, mender
+    id, goods_status, price, stock, category, goods_version, goods_buy_version, create_time, 
+    create_user_id, update_time, update_user_id
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.yangwanhao.bookshop.common.pojo.goods.GoodsBaseExample" >
     select
@@ -107,14 +107,14 @@
     </if>
   </delete>
   <insert id="insert" parameterType="cn.yangwanhao.bookshop.common.pojo.goods.GoodsBase" >
-    insert into goods_base (id, status, price, 
+    insert into goods_base (id, goods_status, price, 
       stock, category, goods_version, 
-      goods_buy_version, create_time, creator, 
-      update_time, mender)
-    values (#{id,jdbcType=BIGINT}, #{status,jdbcType=INTEGER}, #{price,jdbcType=BIGINT}, 
+      goods_buy_version, create_time, create_user_id, 
+      update_time, update_user_id)
+    values (#{id,jdbcType=BIGINT}, #{goodsStatus,jdbcType=INTEGER}, #{price,jdbcType=BIGINT}, 
       #{stock,jdbcType=INTEGER}, #{category,jdbcType=INTEGER}, #{goodsVersion,jdbcType=BIGINT}, 
-      #{goodsBuyVersion,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}, #{creator,jdbcType=BIGINT}, 
-      #{updateTime,jdbcType=TIMESTAMP}, #{mender,jdbcType=BIGINT})
+      #{goodsBuyVersion,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}, #{createUserId,jdbcType=BIGINT}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{updateUserId,jdbcType=BIGINT})
   </insert>
   <insert id="insertSelective" parameterType="cn.yangwanhao.bookshop.common.pojo.goods.GoodsBase" >
     insert into goods_base
@@ -122,8 +122,8 @@
       <if test="id != null" >
         id,
       </if>
-      <if test="status != null" >
-        status,
+      <if test="goodsStatus != null" >
+        goods_status,
       </if>
       <if test="price != null" >
         price,
@@ -143,22 +143,22 @@
       <if test="createTime != null" >
         create_time,
       </if>
-      <if test="creator != null" >
-        creator,
+      <if test="createUserId != null" >
+        create_user_id,
       </if>
       <if test="updateTime != null" >
         update_time,
       </if>
-      <if test="mender != null" >
-        mender,
+      <if test="updateUserId != null" >
+        update_user_id,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         #{id,jdbcType=BIGINT},
       </if>
-      <if test="status != null" >
-        #{status,jdbcType=INTEGER},
+      <if test="goodsStatus != null" >
+        #{goodsStatus,jdbcType=INTEGER},
       </if>
       <if test="price != null" >
         #{price,jdbcType=BIGINT},
@@ -178,14 +178,14 @@
       <if test="createTime != null" >
         #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="creator != null" >
-        #{creator,jdbcType=BIGINT},
+      <if test="createUserId != null" >
+        #{createUserId,jdbcType=BIGINT},
       </if>
       <if test="updateTime != null" >
         #{updateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="mender != null" >
-        #{mender,jdbcType=BIGINT},
+      <if test="updateUserId != null" >
+        #{updateUserId,jdbcType=BIGINT},
       </if>
     </trim>
   </insert>
@@ -201,8 +201,8 @@
       <if test="record.id != null" >
         id = #{record.id,jdbcType=BIGINT},
       </if>
-      <if test="record.status != null" >
-        status = #{record.status,jdbcType=INTEGER},
+      <if test="record.goodsStatus != null" >
+        goods_status = #{record.goodsStatus,jdbcType=INTEGER},
       </if>
       <if test="record.price != null" >
         price = #{record.price,jdbcType=BIGINT},
@@ -222,14 +222,14 @@
       <if test="record.createTime != null" >
         create_time = #{record.createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.creator != null" >
-        creator = #{record.creator,jdbcType=BIGINT},
+      <if test="record.createUserId != null" >
+        create_user_id = #{record.createUserId,jdbcType=BIGINT},
       </if>
       <if test="record.updateTime != null" >
         update_time = #{record.updateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.mender != null" >
-        mender = #{record.mender,jdbcType=BIGINT},
+      <if test="record.updateUserId != null" >
+        update_user_id = #{record.updateUserId,jdbcType=BIGINT},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -239,16 +239,16 @@
   <update id="updateByExample" parameterType="map" >
     update goods_base
     set id = #{record.id,jdbcType=BIGINT},
-      status = #{record.status,jdbcType=INTEGER},
+      goods_status = #{record.goodsStatus,jdbcType=INTEGER},
       price = #{record.price,jdbcType=BIGINT},
       stock = #{record.stock,jdbcType=INTEGER},
       category = #{record.category,jdbcType=INTEGER},
       goods_version = #{record.goodsVersion,jdbcType=BIGINT},
       goods_buy_version = #{record.goodsBuyVersion,jdbcType=BIGINT},
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
-      creator = #{record.creator,jdbcType=BIGINT},
+      create_user_id = #{record.createUserId,jdbcType=BIGINT},
       update_time = #{record.updateTime,jdbcType=TIMESTAMP},
-      mender = #{record.mender,jdbcType=BIGINT}
+      update_user_id = #{record.updateUserId,jdbcType=BIGINT}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -256,8 +256,8 @@
   <update id="updateByPrimaryKeySelective" parameterType="cn.yangwanhao.bookshop.common.pojo.goods.GoodsBase" >
     update goods_base
     <set >
-      <if test="status != null" >
-        status = #{status,jdbcType=INTEGER},
+      <if test="goodsStatus != null" >
+        goods_status = #{goodsStatus,jdbcType=INTEGER},
       </if>
       <if test="price != null" >
         price = #{price,jdbcType=BIGINT},
@@ -277,30 +277,30 @@
       <if test="createTime != null" >
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="creator != null" >
-        creator = #{creator,jdbcType=BIGINT},
+      <if test="createUserId != null" >
+        create_user_id = #{createUserId,jdbcType=BIGINT},
       </if>
       <if test="updateTime != null" >
         update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="mender != null" >
-        mender = #{mender,jdbcType=BIGINT},
+      <if test="updateUserId != null" >
+        update_user_id = #{updateUserId,jdbcType=BIGINT},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.yangwanhao.bookshop.common.pojo.goods.GoodsBase" >
     update goods_base
-    set status = #{status,jdbcType=INTEGER},
+    set goods_status = #{goodsStatus,jdbcType=INTEGER},
       price = #{price,jdbcType=BIGINT},
       stock = #{stock,jdbcType=INTEGER},
       category = #{category,jdbcType=INTEGER},
       goods_version = #{goodsVersion,jdbcType=BIGINT},
       goods_buy_version = #{goodsBuyVersion,jdbcType=BIGINT},
       create_time = #{createTime,jdbcType=TIMESTAMP},
-      creator = #{creator,jdbcType=BIGINT},
+      create_user_id = #{createUserId,jdbcType=BIGINT},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
-      mender = #{mender,jdbcType=BIGINT}
+      update_user_id = #{updateUserId,jdbcType=BIGINT}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>
