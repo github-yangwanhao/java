@@ -19,6 +19,60 @@ import java.util.TreeSet;
 
 public class RecurrenceList {
     public static void main(String[] args) {
+        System.out.println(getChildrenIds());
+        System.err.println("--------------------------------------------------------------------------------");
+        System.out.println(getTree());
+    }
+
+    // -----------------------------------------------------------------------------------------------------------------
+
+    private static Set<Integer> getChildrenIds() {
+        return getChildId(initCategoryList(), 1);
+    }
+
+    private static Set<Integer> getChildId(List<Category> categoryList, Integer id) {
+        Set<Integer> set = new TreeSet<>();
+        for (Category category : categoryList) {
+            if (category.getParentId().equals(id)) {
+                set.add(category.getId());
+                set.addAll(getChildId(categoryList, category.getId()));
+            }
+        }
+        return set;
+    }
+
+    // -----------------------------------------------------------------------------------------------------------------
+
+    private static List<GoodsCategoryTreeVo> getTree() {
+        List<Category> categoryList = initCategoryList();
+        List<GoodsCategoryTreeVo> list = new ArrayList<>();
+        for (Category category : categoryList) {
+            if (category.getParentId() == 0) {
+                GoodsCategoryTreeVo vo = new GoodsCategoryTreeVo();
+                vo.setId(category.getId());
+                vo.setText(category.getName());
+                vo.setChildren(getChildren(categoryList, category));
+                list.add(vo);
+            }
+        }
+        return list;
+    }
+
+    private static List<GoodsCategoryTreeVo> getChildren(List<Category> categoryList, Category parentCategory) {
+        List<GoodsCategoryTreeVo> resultList = new ArrayList<>();
+        for (Category category : categoryList) {
+            if (category.getParentId().equals(parentCategory.getId())) {
+                GoodsCategoryTreeVo vo = new GoodsCategoryTreeVo();
+                vo.setId(category.getId());
+                vo.setText(category.getName());
+                vo.setChildren(getChildren(categoryList, category));
+                resultList.add(vo);
+            }
+        }
+        return resultList;
+    }
+
+    private static List<Category> initCategoryList() {
         List<Category> categoryList = new ArrayList<>(10);
         Category category0 = new Category(1, "aaa", 0, 1, 1);
         Category category1 = new Category(2, "bbb", 1, 1, 2);
@@ -29,7 +83,7 @@ public class RecurrenceList {
         Category category6 = new Category(7, "ggg", 5, 0, 7);
         Category category7 = new Category(8, "hhh", 6, 0, 8);
         Category category8 = new Category(9, "iii", 0, 0, 9);
-        Category category9 = new Category(10, "jjj", 0, 0, 10);
+        Category category9 = new Category(10, "jjj", 9, 0, 10);
         categoryList.add(category0);
         categoryList.add(category1);
         categoryList.add(category2);
@@ -40,18 +94,7 @@ public class RecurrenceList {
         categoryList.add(category7);
         categoryList.add(category8);
         categoryList.add(category9);
-        Set<Integer> ids = getDeleteIds(categoryList, 1, new TreeSet<>());
-        System.out.println(ids);
-    }
-
-    private static Set<Integer> getDeleteIds(List<Category> categoryList, Integer id, Set<Integer> set) {
-        for (Category category : categoryList) {
-            if (category.getParentId().equals(id)) {
-                set.add(category.getId());
-                getDeleteIds(categoryList,category.getId(), set);
-            }
-        }
-        return set;
+        return categoryList;
     }
 }
 
@@ -71,4 +114,23 @@ class Category {
 
     private static final long serialVersionUID = 1L;
 
+}
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+class GoodsCategoryTreeVo {
+
+    public GoodsCategoryTreeVo(Integer id, String text) {
+        this.id = id;
+        this.text = text;
+    }
+
+    private Integer id;
+
+    private String text;
+
+    private String state = "open";
+
+    private List<GoodsCategoryTreeVo> children;
 }
