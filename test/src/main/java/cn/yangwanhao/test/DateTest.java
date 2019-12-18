@@ -23,5 +23,17 @@ public class DateTest {
         System.out.println(date3.getMonth());
         System.out.println(date1.getMonth() == date2.getMonth());
         System.out.println(date1.getMonth() == date3.getMonth());
+        System.err.println(differentDaysByMillisecond(date1, date2));
+        System.err.println(differentDaysByMillisecond1(date1, date2));
+    }
+
+    private static int differentDaysByMillisecond(Date date1,Date date2) {
+        int days = (int) ((date2.getTime() - date1.getTime()) / (1000*3600*24));
+        return Math.abs(days);
+    }
+
+    private static long differentDaysByMillisecond1(Date date1,Date date2) {
+        long days = (date2.getTime() - date1.getTime()) / (1000*3600*24);
+        return Math.abs(days);
     }
 }

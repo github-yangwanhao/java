@@ -121,11 +121,6 @@ class Category {
 @AllArgsConstructor
 class GoodsCategoryTreeVo {
 
-    public GoodsCategoryTreeVo(Integer id, String text) {
-        this.id = id;
-        this.text = text;
-    }
-
     private Integer id;
 
     private String text;

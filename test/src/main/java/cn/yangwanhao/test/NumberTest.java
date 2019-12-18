@@ -1,6 +1,7 @@
 package cn.yangwanhao.test;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 /**
  * description
@@ -30,5 +31,11 @@ public class NumberTest {
         Long num3 = 100024L;
         int num4 = Integer.parseInt(num3.toString());
         System.out.println(num4);
+        System.out.println(new BigDecimal("10").divide(new BigDecimal("3"),1, RoundingMode.HALF_UP));
+        BigDecimal bigDecimal3 = new BigDecimal("1024");
+        System.out.println(bigDecimal3.movePointLeft(2).doubleValue());
+        System.out.println(bigDecimal3.movePointRight(-2).doubleValue());
+        System.out.println(bigDecimal3.movePointRight(0).doubleValue());
+        System.out.println(bigDecimal3.movePointLeft(0).doubleValue());
     }
 }
