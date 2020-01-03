@@ -32,6 +32,11 @@ public class StreamTest {
         System.out.println("最小值:" + summaryStatistics.getMin());
         System.out.println("总和:" + summaryStatistics.getSum());
         System.out.println("平均值:" + summaryStatistics.getAverage());
+        List<String> list = null;
+        /// list.forEach(str ->{
+        ///    System.out.println("-------------------------");
+        /// });
+        // 上面代码会造成空指针异常
     }
 
 }
