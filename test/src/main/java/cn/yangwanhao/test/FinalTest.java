@@ -1,8 +1,6 @@
 package cn.yangwanhao.test;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import cn.yangwanhao.test.bean.User;
 
 /**
  * description
@@ -40,10 +38,3 @@ public class FinalTest {
 
 }
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-class User {
-    private String name;
-    private Integer age;
-}
