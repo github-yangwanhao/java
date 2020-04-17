@@ -1,5 +1,7 @@
 package cn.yangwanhao.test;
 
+import org.apache.commons.lang3.StringUtils;
+
 /**
  * description
  *
@@ -21,5 +23,30 @@ public class StringTest {
         String dateStr2 = "2017.01";
         System.out.println(dateStr1.replace('-','.'));
         System.out.println(dateStr2.replace('-','.'));
+        // 测试字符串分隔
+        String originalName = "aaa.jpg";
+        String addStr = "_80x80";
+        String thumbnailName = "aaa_80x80.jpg";
+        StringBuffer sb = new StringBuffer();
+        // 原图获取缩略图
+        sb.append(StringUtils.substringBeforeLast(originalName, "."))
+                .append(addStr)
+                .append(".")
+                .append(StringUtils.substringAfterLast(originalName, "."));
+        System.out.println(sb.toString().equals(thumbnailName));
+        // 缩略图获取原图
+        sb.delete(0, sb.length());
+        String prefix = StringUtils.substringBeforeLast(thumbnailName, ".");
+        // jpg
+        String extension = StringUtils.substringAfterLast(thumbnailName, ".");
+        prefix = prefix.substring(0, prefix.length()-addStr.length());
+        sb.append(prefix).append(".").append(extension);
+        System.out.println(sb.toString().equals(originalName));
+        String message1 = "order:orderNo:123456789123456789";
+        String message2 = "order:orderNo:987654321587210";
+        String message3 = "order:orderNo:17615648315624581455482111";
+        System.out.println(message1.substring(message1.lastIndexOf(":")+1));
+        System.out.println(message2.substring(message2.lastIndexOf(":")+1));
+        System.out.println(message3.substring(message3.lastIndexOf(":")+1));
     }
 }

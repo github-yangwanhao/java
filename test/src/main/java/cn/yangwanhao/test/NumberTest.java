@@ -2,6 +2,7 @@ package cn.yangwanhao.test;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.Random;
 
 /**
  * description
@@ -37,5 +38,9 @@ public class NumberTest {
         System.out.println(bigDecimal3.movePointRight(-2).doubleValue());
         System.out.println(bigDecimal3.movePointRight(0).doubleValue());
         System.out.println(bigDecimal3.movePointLeft(0).doubleValue());
+        for (int i=0; i<6; i++) {
+            Random r = new Random();
+            System.out.println(r.nextInt(10));
+        }
     }
 }
