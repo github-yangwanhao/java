@@ -1,27 +1,13 @@
 package cn.yangwanhao.test;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
 import java.net.URL;
-import java.net.URLConnection;
-import java.util.List;
-import java.util.Map;
 
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
 import java.net.HttpURLConnection;
-import java.net.URL;
 import java.io.File;
-import java.io.IOException;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
 /**
  * description HttpRequest类
  *
@@ -63,8 +49,6 @@ public class HttpRequest {
         if(inputStream!=null){
             inputStream.close();
         }
-
-
         System.out.println("info:"+url+" download success");
 
     }
@@ -87,6 +71,5 @@ public class HttpRequest {
         bos.close();
         return bos.toByteArray();
     }
-
 
 }

@@ -48,5 +48,11 @@ public class StringTest {
         System.out.println(message1.substring(message1.lastIndexOf(":")+1));
         System.out.println(message2.substring(message2.lastIndexOf(":")+1));
         System.out.println(message3.substring(message3.lastIndexOf(":")+1));
+        // 测试hashcode相同但是不是同一个对象
+        String hashcode1 = "hashcode";
+        String hashcode2 = new String("hashcode");
+        System.out.println(hashcode1 == hashcode2);
+        System.out.println(hashcode1.hashCode());
+        System.out.println(hashcode2.hashCode());
     }
 }
