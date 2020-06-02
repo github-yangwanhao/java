@@ -1,6 +1,8 @@
 package cn.yangwanhao.data.sort;
 
 
+import java.util.Arrays;
+
 /**
  * description InsertSort类 插入排序
  *
@@ -18,7 +20,10 @@ public class InsertSort {
     public static void main(String[] args) {
         int[] array = new int[]{1, 4, 7, 2, 8, 9, 10, 5};
         insertSort1(array);
-        print(array);
+        System.out.println(Arrays.toString(array));;
+        array = new int[]{1, 4, 7, 2, 8, 9, 10, 5};
+        insertSort2(array);
+        System.out.println(Arrays.toString(array));;
     }
 
    private static void insertSort1(int[] array) {
@@ -32,12 +37,16 @@ public class InsertSort {
         }
    }
 
-    private static void print(int[] array) {
-        for (int num : array) {
-            System.out.print(num + "\t");
-        }
-        System.out.println();
-        System.out.println("----------end-----------");
-    }
+   private static void insertSort2(int[] array) {
+       for (int i=1; i<array.length; i++) {
+           int insertVal = array[i];
+           int insertIndex = i-1;
+           while (insertIndex >= 0 && insertVal < array[insertIndex]) {
+               array[insertIndex+1] = array[insertIndex];
+               insertIndex--;
+           }
+           array[insertIndex + 1] = insertVal;
+       }
+   }
 
 }
