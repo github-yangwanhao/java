@@ -9,7 +9,7 @@ import java.util.Map;
  * @author 杨万浩
  * @date 2020/5/29 08:26
  */
-public class TwoSum {
+public class EasyTwoSum {
 
     public static void main(String[] args) {
         /**
