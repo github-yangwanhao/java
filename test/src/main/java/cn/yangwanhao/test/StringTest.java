@@ -51,6 +51,7 @@ public class StringTest {
         // 测试hashcode相同但是不是同一个对象
         String hashcode1 = "hashcode";
         String hashcode2 = new String("hashcode");
+        System.out.println(hashcode1.equals(hashcode2));
         System.out.println(hashcode1 == hashcode2);
         System.out.println(hashcode1.hashCode());
         System.out.println(hashcode2.hashCode());
