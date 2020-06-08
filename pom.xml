@@ -16,6 +16,8 @@
         <module>test</module>
         <module>written-examination</module>
         <module>books</module>
+        <module>books/high-concurrency-programming</module>
+        <module>books/high-concurrency-programming</module>
     </modules>
 
     <dependencies>
