@@ -26,6 +26,15 @@ public class AutoIncreasementTest {
         System.out.println(i);
         // 1
         System.out.println(j);
+        i = 0; j = 0;
+        for (int n=0; n<100; n++) {
+            i = i++;
+            j = ++j;
+        }
+        // 0 先赋值再加一 所以拿到的i永远是0
+        System.out.println(i);
+        // 100
+        System.out.println(j);
     }
 
 }
