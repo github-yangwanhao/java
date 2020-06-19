@@ -1,7 +1,8 @@
 package cn.yangwanhao.test;
 
-import cn.yangwanhao.test.bean.Category;
-import cn.yangwanhao.test.bean.GoodsCategoryTreeVo;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +18,39 @@ import java.util.TreeSet;
  */
 
 public class RecurrenceList {
+
+    @Data
+    @NoArgsConstructor
+    @AllArgsConstructor
+    static class Category {
+        private Integer id;
+
+        private String name;
+
+        private Integer parentId;
+
+        private Integer isParent;
+
+        private Integer sort;
+
+        private static final long serialVersionUID = 1L;
+
+    }
+
+    @Data
+    @NoArgsConstructor
+    @AllArgsConstructor
+    static class GoodsCategoryTreeVo {
+
+        private Integer id;
+
+        private String text;
+
+        private String state = "open";
+
+        private List<GoodsCategoryTreeVo> children;
+    }
+
     public static void main(String[] args) {
         System.out.println(getChildrenIds());
         System.err.println("--------------------------------------------------------------------------------");

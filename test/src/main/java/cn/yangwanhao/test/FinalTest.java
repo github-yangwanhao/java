@@ -1,6 +1,8 @@
 package cn.yangwanhao.test;
 
-import cn.yangwanhao.test.bean.User;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * description
@@ -34,6 +36,14 @@ public class FinalTest {
         USER.setAge(23);
         // User(name=杨万浩, age=23)
         System.out.println(USER);
+    }
+
+    @Data
+    @NoArgsConstructor
+    @AllArgsConstructor
+    static class User {
+        private String name;
+        private Integer age;
     }
 
 }
