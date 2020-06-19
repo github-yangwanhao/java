@@ -36,7 +36,7 @@ public class StreamTest {
         /// list.forEach(str ->{
         ///    System.out.println("-------------------------");
         /// });
-        // 上面代码会造成空指针异常
+        // Will NPE Here
     }
 
 }

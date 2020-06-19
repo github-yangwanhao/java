@@ -22,13 +22,14 @@ public class InitTest {
     }
 
     public static void main(String[] args) {
-        /*new InitTest(5);
-        System.out.println("-------------------------------");
-        House house = new House();
-        house.f();
-        House house1 = new House();
-        house1.f();
-        System.out.println("--------------------------------");*/
+        /// new InitTest(5);
+        /// System.out.println("-------------------------------");
+        /// House house = new House();
+        /// house.f();
+        /// House house1 = new House();
+        /// house1.f();
+        /// System.out.println("--------------------------------");
+
         System.out.println("Create new CupBoard in main");
         new CupBoard();
         System.out.println("Create new CupBoard in main");

@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 public class BasicTypeTest {
 
     public static void main(String[] args) {
-        /**
+        /*
          * 由结果可见,char类型的默认值是 \u0000 表现形式是一个空格 但是不等于一个空格
          */
         BasicType basicType = new BasicType();

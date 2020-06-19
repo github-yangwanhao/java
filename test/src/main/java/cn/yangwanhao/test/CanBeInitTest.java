@@ -8,7 +8,7 @@ package cn.yangwanhao.test;
  * @date 2019/11/13 19:38
  */
 
-public class Test {
+public class CanBeInitTest {
     private static Object object;
     private static String str1;
     public static void main(String[] args) {

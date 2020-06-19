@@ -103,7 +103,7 @@ class Father {
 class Children extends Father {
 
     public Children() {
-        /**
+        /*
          * 这里会报错 因为子类构造方法会调用父类的默认构造方法(无参构造方法) 或者 如下所示指定调用父类的哪一个构造方法
          */
         // super();

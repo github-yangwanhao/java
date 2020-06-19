@@ -19,7 +19,7 @@ public class PatternTest {
     private static final int count = 10000000;
 
     public static void main(String[] args) {
-        /**
+        /*
          * 使用String.matches(regexStr)的方法进行验证
          */
         long beginTime1 = System.currentTimeMillis();
@@ -28,7 +28,7 @@ public class PatternTest {
         }
         long endTime1 = System.currentTimeMillis();
         System.err.println("原始版"+ (endTime1 - beginTime1));
-        /**
+        /*
          * 使用Pattern类进行验证
          */
         long beginTime = System.currentTimeMillis();

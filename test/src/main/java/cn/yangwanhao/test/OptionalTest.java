@@ -13,10 +13,8 @@ public class OptionalTest {
 
     public static void main(String[] args) {
         Chain1 chain1 = new Chain1();
-        /*
-         * Will NPE here
-         * System.out.println(chain1.getChain2().getChain3().getNum());
-         */
+        /// Will NPE here
+        /// System.out.println(chain1.getChain2().getChain3().getNum());
         Optional<Integer> result = Optional.ofNullable(chain1)
             .map(Chain1::getChain2)
             .map(Chain2::getChain3)
