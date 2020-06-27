@@ -42,5 +42,18 @@ public class NumberTest {
             Random r = new Random();
             System.out.println(r.nextInt(10));
         }
+        // 浮点数之间的等值判断，基本数据类型不能用==来比较，包装数据类型不能用equals()来判断
+        // false
+        System.out.println(0.1+0.2 == 0.3);
+        // true
+        System.out.println(2000000000F == 2000000050F);
+        Float float1 = 1.0F - 0.9F;
+        Float float2 = 0.9F - 0.8F;
+        // false
+        System.out.println(float1.equals(float2));
+        Double double1 = 1.0D - 0.9D;
+        Double double2 = 1.1D - 1.0D;
+        // false
+        System.out.println(double1.equals(double2));
     }
 }
