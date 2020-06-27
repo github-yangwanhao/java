@@ -15,7 +15,7 @@ import java.util.Random;
  */
 public class RandomSongsPlay {
 
-    private static final String[] songs = new String[] {
+    private static final String[] SONGS = new String[] {
         "歌曲1", "歌曲2", "歌曲3", "歌曲4", "歌曲5",
         "歌曲6", "歌曲7", "歌曲8", "歌曲9", "歌曲10"
     };
@@ -43,7 +43,7 @@ public class RandomSongsPlay {
         Random random = new Random();
         // 看看总共执行了几次循环
         int executeCount = 0;
-        Map<Integer, String> map = new HashMap<>(songs.length);
+        Map<Integer, String> map = new HashMap<>(SONGS.length);
         do {
             executeCount++;
             int index = random.nextInt(10);
@@ -51,8 +51,8 @@ public class RandomSongsPlay {
                 continue;
             }
             // 假装播放
-            map.put(index, songs[index]);
-        } while (map.size() != songs.length);
+            map.put(index, SONGS[index]);
+        } while (map.size() != SONGS.length);
         System.out.println("play1() : " + executeCount);
         System.out.println(map);
     }
@@ -64,11 +64,11 @@ public class RandomSongsPlay {
          * PS：使用LinkedList,ArrayList底层也是使用数组,完全没区别,而LinkedList使用链表
          */
         List<Integer> songsIndexList = new LinkedList<>();
-        for (int i = 0; i < songs.length; i++) {
+        for (int i = 0; i < SONGS.length; i++) {
             songsIndexList.add(i);
         }
         // 下边使用List存放已播放的歌曲名
-        List<String> resultList = new ArrayList<>(songs.length);
+        List<String> resultList = new ArrayList<>(SONGS.length);
         // 看看总共执行了几次循环
         int executeCount = 0;
         Random random = new Random();
@@ -78,7 +78,7 @@ public class RandomSongsPlay {
             int index = random.nextInt(songsIndexList.size());
             // doSomething 假装播放
             // 放入歌曲名(这里的index是歌曲下标集合的位置,这个位置存的值才是数组songs真正的下标)
-            resultList.add(songs[songsIndexList.get(index)]);
+            resultList.add(SONGS[songsIndexList.get(index)]);
             // 删掉下标集合
             songsIndexList.remove(index);
         } while (songsIndexList.size() > 0);
@@ -92,11 +92,11 @@ public class RandomSongsPlay {
          * 文章地址：https://blog.csdn.net/JinKin_OldWang/article/details/93520936
          */
         Random random = new Random();
-        Map<Integer,String> map = new HashMap<>(songs.length);
+        Map<Integer,String> map = new HashMap<>(SONGS.length);
         // 看看总共执行了几次循环
         int executeCount = 0;
         //遍历10首歌曲，存到map集合
-        for (int i = 0; i < songs.length; i++) {
+        for (int i = 0; i < SONGS.length; i++) {
             executeCount++;
             int num = random.nextInt(10) + 1;
             // 如果歌曲播放过 那么这次循环无效 i-- 让i回退一次
@@ -105,7 +105,7 @@ public class RandomSongsPlay {
             } else {
                 // doSomething 假装播放。
                 // 放入歌曲名
-                map.put(num,songs[i]);
+                map.put(num,SONGS[i]);
             }
         }
         System.out.println("play3() : " + executeCount);
