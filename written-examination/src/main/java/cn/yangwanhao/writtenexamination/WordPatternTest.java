@@ -9,8 +9,7 @@ import org.apache.commons.lang3.StringUtils;
 /**
  * description WordPatternTest类
  *
- * @author yangwh@yunrong.cn
- * @version V3.0
+ * @author 杨万浩
  * @since 2020/7/2 10:02
  */
 public class WordPatternTest {
