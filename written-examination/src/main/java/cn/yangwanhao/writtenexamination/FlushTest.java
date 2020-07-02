@@ -41,7 +41,7 @@ public class FlushTest {
         // 准备数据
 
         // 第一组数据 不通过 花色不同
-        /*List<PaperCard> testList1 = new ArrayList<>(PAPER_NUM);
+        List<PaperCard> testList1 = new ArrayList<>(PAPER_NUM);
         testList1.add(new PaperCard(1, SPADE));
         testList1.add(new PaperCard(2, SPADE));
         testList1.add(new PaperCard(3, CLUB));
@@ -73,12 +73,12 @@ public class FlushTest {
         System.out.println(isFlush(testList1));
         System.out.println(isFlush(testList2));
         System.out.println(isFlush(testList3));
-        System.out.println(isFlush(testList4));*/
+        System.out.println(isFlush(testList4));
 
         /*
          * 下边是模拟抽取五张牌的代码 但是这个太随缘了 成功率太低 所以手动使用集合来测试
          */
-        boolean flag = true;
+        /*boolean flag = true;
         int executeCount = 0;
         do {
             executeCount++;
@@ -92,7 +92,7 @@ public class FlushTest {
             // 为防止生成的随机数太过相近，让线程休眠一下
             Thread.sleep(50);
         } while (flag);
-        System.out.println("总执行次数：" + executeCount);
+        System.out.println("总执行次数：" + executeCount);*/
     }
 
     private static List<PaperCard> getPaperCards() {
@@ -152,17 +152,21 @@ public class FlushTest {
         int difference = numSet.last() - numSet.first();
         // 三种情况是通过的
         // 没有王 集合长度是5,差值应该为4 eg:4,5,6,7,8      5,6,7,8,9       9,10,11,12,13
-        // 一个王 集合长度是4,差值应该为4或者3 eg:4,5,7,8 & 14     1,2,3,4 & 14
-        // 两个王 集合长度是3,差值应该为4或者2 eg:1,3,5 & 14 &15     1,2,3 & 14 & 15
-        if (numSet.size() == 5 && difference == 4) {
+        // 一个王 集合长度是4,差值应该为4或者3 eg:4,5,7,8,14     1,2,3,4,14
+        // 两个王 集合长度是3,差值应该为4或者或者3或者2 eg:1,3,5,14,15      1,3,4,14,15     1,2,3,14,15
+        // 由此可以观察出 差值的范围应该是 4 >= difference >= numSet.size()-1
+        if (difference <= PAPER_NUM-1 && difference >= numSet.size()-1) {
+            return true;
+        }
+        /*if (numSet.size() == 5 && difference == 4) {
             return true;
         }
         if (numSet.size() == 4 && (difference == 4 || difference == 3)) {
             return true;
         }
-        if (numSet.size() == 3 && (difference == 4 || difference == 2)) {
+        if (numSet.size() == 3 && (difference == 4 || difference == 3 || difference == 2)) {
             return true;
-        }
+        }*/
         return false;
     }
 
