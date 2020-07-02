@@ -13,7 +13,7 @@ import java.util.Random;
  * @author 杨万浩
  * @since 2020/6/27 15:51
  */
-public class RandomSongsPlay {
+public class RandomPlaySongsTest {
 
     private static final String[] SONGS = new String[] {
         "歌曲1", "歌曲2", "歌曲3", "歌曲4", "歌曲5",
