@@ -15,6 +15,11 @@ public class FinallyTest {
     private int test() {
         int a;
         try {
+            /*
+             * 此处a=10并return a
+             * 但是仍然会执行finally 将a=5
+             * 但是仍然返回的是10 因为实际返回的值是虚拟机规定的一个临时变量
+             */
             a = 10;
             return a;
         } catch (Exception e) {
