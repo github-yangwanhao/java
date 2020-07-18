@@ -16,9 +16,6 @@
         <module>test</module>
         <module>written-examination</module>
         <module>books</module>
-        <module>books/high-concurrency-programming</module>
-        <module>books/high-concurrency-programming</module>
-        <module>books/think-in-java</module>
         <module>base</module>
     </modules>
 
@@ -27,6 +24,7 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.8</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 

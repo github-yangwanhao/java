@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>high-concurrency-programming</module>
+        <module>think-in-java</module>
     </modules>
 
 </project>
