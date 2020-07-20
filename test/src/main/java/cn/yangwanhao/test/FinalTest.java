@@ -22,6 +22,9 @@ public class FinalTest {
     private static final byte BYTE_VALUE = 1;
     private static final int INT_VALUE = 1;
 
+    private static String str = new String("aaa");
+    private static final String STR = str;
+
     private static final User USER = new User("杨万浩", 22);
 
     public static void main(String[] args) {
@@ -36,6 +39,9 @@ public class FinalTest {
         USER.setAge(23);
         // User(name=杨万浩, age=23)
         System.out.println(USER);
+        System.out.println("STR: " + STR + ";str: " + str);
+        str = "bbb";
+        System.out.println("STR: " + STR + ";str: " + str);
     }
 
     @Data

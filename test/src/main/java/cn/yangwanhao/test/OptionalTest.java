@@ -3,10 +3,7 @@ package cn.yangwanhao.test;
 import java.util.Optional;
 
 /**
- * TODO
- *
- * @author yangwh@yunrong.cn
- * @version V2.1
+ * @author 杨万浩
  * @since 2020/6/19 11:11
  */
 public class OptionalTest {

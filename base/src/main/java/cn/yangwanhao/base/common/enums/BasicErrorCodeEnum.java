@@ -6,8 +6,7 @@ import lombok.Getter;
 /**
  * 全局通用异常
  *
- * @author yangwh@yunrong.cn
- * @version V3.0
+ * @author 杨万浩
  * @since 2020/7/18 11:51
  */
 public enum BasicErrorCodeEnum {
@@ -26,7 +25,7 @@ public enum BasicErrorCodeEnum {
     /**
      * 未找到系列
      */
-    G500301(500301, "未找到该枚举类")
+    G500301(500301, "未找到该枚举")
     ;
 
     @Getter
