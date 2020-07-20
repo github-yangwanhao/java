@@ -198,7 +198,7 @@ public class BigDecimalUtils {
     private static void validateIsNum(String... args) {
         for (String num : args) {
             if (!ValidateUtils.isNumber(num)) {
-                throw new BasicException(BasicErrorCodeEnum.G5002001);
+                throw new BasicException(BasicErrorCodeEnum.G500201);
             }
         }
     }
