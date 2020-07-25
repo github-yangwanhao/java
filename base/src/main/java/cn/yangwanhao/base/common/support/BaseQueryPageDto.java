@@ -2,9 +2,7 @@ package cn.yangwanhao.base.common.support;
 
 import java.io.Serializable;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 /**
  * BaseQueryPageDto
@@ -15,8 +13,6 @@ import lombok.NoArgsConstructor;
  */
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class BaseQueryPageDto implements Serializable {
 
     private static final long serialVersionUID = -3133418092766629129L;
@@ -24,11 +20,28 @@ public class BaseQueryPageDto implements Serializable {
     /**
      * 页码
      */
-    private Integer pageNum = 1;
+    private Integer pageNum;
 
     /**
-     * 页面大小
+     * 页面数据条数
      */
-    private Integer pageSize = 10;
+    private Integer pageSize;
+
+    public BaseQueryPageDto() {
+        init();
+    }
+
+    public BaseQueryPageDto(Integer pageNum, Integer pageSize) {
+        this.pageNum = pageNum;
+        this.pageSize = pageSize;
+    }
+
+    /**
+     * init attribute
+     */
+    private void init() {
+        this.pageNum  = 1;
+        this.pageSize = 10;
+    }
 
 }
