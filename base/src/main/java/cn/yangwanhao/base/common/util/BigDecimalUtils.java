@@ -43,8 +43,8 @@ public class BigDecimalUtils {
      * @date 2020/7/18 16:07
      */
     public static BigDecimal add(Number var1, Number var2) {
-        BigDecimal num1 = new BigDecimal(var1.toString());
-        BigDecimal num2 = new BigDecimal(var2.toString());
+        BigDecimal num1 = new BigDecimal(String.valueOf(var1));
+        BigDecimal num2 = new BigDecimal(String.valueOf(var2));
         return num1.add(num2);
     }
 
@@ -72,8 +72,8 @@ public class BigDecimalUtils {
      * @date 2019/11/30 11:47
      */
     public static BigDecimal sub(Number var1, Number var2) {
-        BigDecimal num1 = new BigDecimal(var1.toString());
-        BigDecimal num2 = new BigDecimal(var2.toString());
+        BigDecimal num1 = new BigDecimal(String.valueOf(var1));
+        BigDecimal num2 = new BigDecimal(String.valueOf(var2));
         return num1.subtract(num2);
     }
 
@@ -101,8 +101,8 @@ public class BigDecimalUtils {
      * @date 2019/11/30 11:49
      */
     public static BigDecimal mul(Number var1, Number var2) {
-        BigDecimal num1 = new BigDecimal(var1.toString());
-        BigDecimal num2 = new BigDecimal(var2.toString());
+        BigDecimal num1 = new BigDecimal(String.valueOf(var1));
+        BigDecimal num2 = new BigDecimal(String.valueOf(var2));
         return num1.multiply(num2);
     }
 
@@ -138,8 +138,8 @@ public class BigDecimalUtils {
         if (bit == null) {
             bit = 0;
         }
-        BigDecimal num1 = new BigDecimal(var1.toString());
-        BigDecimal num2 = new BigDecimal(var2.toString());
+        BigDecimal num1 = new BigDecimal(String.valueOf(var1));
+        BigDecimal num2 = new BigDecimal(String.valueOf(var2));
         return num1.divide(num2, bit, RoundingMode.HALF_UP);
     }
 
@@ -164,7 +164,7 @@ public class BigDecimalUtils {
      * @date 2019/12/16 14:55
      */
     public static BigDecimal movePointLeft(Number num, int n) {
-        return new BigDecimal(num.toString()).movePointLeft(n);
+        return new BigDecimal(String.valueOf(num)).movePointLeft(n);
     }
 
     /**
@@ -188,7 +188,7 @@ public class BigDecimalUtils {
      * @date 2019/12/16 14:55
      */
     public static BigDecimal movePointRight(Number num, int n) {
-        return new BigDecimal(num.toString()).movePointRight(n);
+        return new BigDecimal(String.valueOf(num)).movePointRight(n);
     }
 
     /**
