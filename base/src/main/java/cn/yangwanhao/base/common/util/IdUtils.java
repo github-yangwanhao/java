@@ -17,6 +17,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class IdUtils {
 
+    private static SnowFlakeIdWorker worker = new SnowFlakeIdWorker(0, 0);
+
     /**
      * Description: 获取UUID
      * @return 生成的UUID字符串
@@ -32,7 +34,6 @@ public class IdUtils {
      * @author 杨万浩
      */
     public static Long getSnowFlakeId() {
-        SnowFlakeIdWorker worker = new SnowFlakeIdWorker(0, 0);
         return worker.getNextId();
     }
 
