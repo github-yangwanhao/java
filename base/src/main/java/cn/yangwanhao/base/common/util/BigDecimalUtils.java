@@ -107,6 +107,18 @@ public class BigDecimalUtils {
     }
 
     /**
+     * Description: 除法运算(默认保留两位有效小数)
+     * @param var1 被除数
+     * @param var2 除数
+     * @return 商
+     * @author 杨万浩
+     * @date 2019/11/30 11:52
+     */
+    public static BigDecimal div(String var1, String var2) {
+        return div(var1, var2, 2);
+    }
+
+    /**
      * Description: 除法运算
      * @param var1 被除数
      * @param var2 除数
@@ -123,6 +135,18 @@ public class BigDecimalUtils {
         BigDecimal num1 = new BigDecimal(var1);
         BigDecimal num2 = new BigDecimal(var2);
         return num1.divide(num2, bit, RoundingMode.HALF_UP);
+    }
+
+    /**
+     * Description: 除法运算(默认保留两位有效小数)
+     * @param var1 被除数
+     * @param var2 除数
+     * @return 商
+     * @author 杨万浩
+     * @date 2019/11/30 11:52
+     */
+    public static BigDecimal div(Number var1, Number var2) {
+        return div(var1, var2, 2);
     }
 
     /**
