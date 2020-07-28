@@ -23,6 +23,9 @@ public class PublicUtils {
      * @return 脱敏手机号
      */
     public static String getMaskPhone(String phone) {
+        if (!ValidateUtils.isMobileNumber(phone)) {
+            throw new BasicException(BasicErrorCodeEnum.G500202);
+        }
         return phone.replaceAll("(\\d{3})\\d{4}(\\d{4})", "$1****$2");
     }
 

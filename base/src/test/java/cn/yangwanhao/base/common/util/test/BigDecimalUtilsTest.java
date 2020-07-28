@@ -23,7 +23,7 @@ public class BigDecimalUtilsTest {
     @Test
     public void testSub() {
         Assert.assertEquals(6, BigDecimalUtils.sub(7, 1).intValue());
-        Assert.assertEquals(6.0, BigDecimalUtils.sub(7.1, 1.1).intValue(), 0);
+        Assert.assertEquals(6.0, BigDecimalUtils.sub("7.1", "1.1").intValue(), 0);
         Assert.assertEquals(-1, BigDecimalUtils.sub(3, 4).intValue());
     }
 
