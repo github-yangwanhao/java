@@ -45,7 +45,7 @@ public class ValidateUtils {
      * @date 2019/10/17 11:44
      */
     public static Boolean isMobileNumber(String phoneStr) {
-        return StringUtils.isBlank(phoneStr) && PHONE_PATTERN.matcher(phoneStr).matches();
+        return StringUtils.isNotBlank(phoneStr) && PHONE_PATTERN.matcher(phoneStr).matches();
     }
 
     /**
@@ -56,7 +56,7 @@ public class ValidateUtils {
      * @date 2019/10/17 11:45
      */
     public static boolean isEmail(String mailStr) {
-        return StringUtils.isBlank(mailStr) && MAIL_PATTERN.matcher(mailStr).matches();
+        return StringUtils.isNotBlank(mailStr) && MAIL_PATTERN.matcher(mailStr).matches();
     }
 
 }
