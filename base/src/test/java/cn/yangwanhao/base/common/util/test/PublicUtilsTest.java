@@ -9,8 +9,7 @@ import cn.yangwanhao.base.common.util.PublicUtils;
 /**
  * PublicUtilsTest
  *
- * @author yangwh@yunrong.cn
- * @version V3.0
+ * @author 杨万浩
  * @since 2020/7/27 21:05
  */
 public class PublicUtilsTest {
