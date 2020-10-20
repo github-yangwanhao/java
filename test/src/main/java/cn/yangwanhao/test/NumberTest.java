@@ -55,5 +55,11 @@ public class NumberTest {
         Double double2 = 1.1D - 1.0D;
         // false
         System.out.println(double1.equals(double2));
+        Integer a = 129;
+        int b = 129;
+        System.out.println(a == b);
+        while (true) {
+            System.out.println((int)((Math.random()*9+1)*10000));
+        }
     }
 }
