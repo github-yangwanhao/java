@@ -51,4 +51,18 @@ public class DateUtils {
         return calendar.getTime();
     }
 
+    /**
+     * 获取当前时间到次日凌晨00:00之间的秒数
+     * @return 秒数
+     */
+    public static Long getSecondsNextEarlyMorning() {
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DAY_OF_YEAR, 1);
+        cal.set(Calendar.HOUR_OF_DAY, 0);
+        cal.set(Calendar.SECOND, 0);
+        cal.set(Calendar.MINUTE, 0);
+        cal.set(Calendar.MILLISECOND, 0);
+        return (cal.getTimeInMillis() - System.currentTimeMillis()) / 1000;
+    }
+
 }
