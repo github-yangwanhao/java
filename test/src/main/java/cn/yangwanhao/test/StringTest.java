@@ -48,5 +48,8 @@ public class StringTest {
         System.out.println(message1.substring(message1.lastIndexOf(":")+1));
         System.out.println(message2.substring(message2.lastIndexOf(":")+1));
         System.out.println(message3.substring(message3.lastIndexOf(":")+1));
+
+        String str = "HLD001";
+        System.out.println(StringUtils.rightPad(str, 10, "X"));
     }
 }
