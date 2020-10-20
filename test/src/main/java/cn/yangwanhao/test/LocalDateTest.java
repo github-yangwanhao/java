@@ -14,6 +14,8 @@ import java.time.format.DateTimeFormatter;
  */
 public class LocalDateTest {
 
+    static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyyMMddHHmmssSSS");
+
     public static void main(String[] args) {
         // LocalDate
         LocalDate localDate = LocalDate.now();
@@ -25,5 +27,7 @@ public class LocalDateTest {
         LocalDateTime localDateTime = LocalDateTime.now();
         System.out.println(localDateTime);
         System.out.println(localDateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+        String string = LocalDateTime.now().format(FORMATTER);
+        System.out.println(string + " : " + string.length());
     }
 }
