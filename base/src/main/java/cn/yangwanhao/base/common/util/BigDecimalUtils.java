@@ -20,6 +20,25 @@ import lombok.NoArgsConstructor;
 public class BigDecimalUtils {
 
     /**
+     * 字符串转为BigDecimal对象
+     * @param var 字符串
+     * @return BigDecimal对象
+     */
+    public static BigDecimal getBigDecimal(String var) {
+        validateIsNum(var);
+        return new BigDecimal(var);
+    }
+
+    /**
+     * 数字转为BigDecimal对象
+     * @param var 数字
+     * @return BigDecimal对象
+     */
+    public static BigDecimal getBigDecimal(Number var) {
+        return new BigDecimal(String.valueOf(var));
+    }
+
+    /**
      * Description: 加法计算
      * @param var1 被加数
      * @param var2 加数
@@ -115,6 +134,7 @@ public class BigDecimalUtils {
      * @date 2019/11/30 11:52
      */
     public static BigDecimal div(String var1, String var2) {
+        validateIsNum(var1, var2);
         return div(var1, var2, 2);
     }
 
@@ -176,6 +196,7 @@ public class BigDecimalUtils {
      * @date 2019/12/16 14:55
      */
     public static BigDecimal movePointLeft(String num, int n) {
+        validateIsNum(num);
         return new BigDecimal(num).movePointLeft(n);
     }
 
@@ -200,6 +221,7 @@ public class BigDecimalUtils {
      * @date 2019/12/16 14:55
      */
     public static BigDecimal movePointRight(String num, int n) {
+        validateIsNum(num);
         return new BigDecimal(num).movePointRight(n);
     }
 
