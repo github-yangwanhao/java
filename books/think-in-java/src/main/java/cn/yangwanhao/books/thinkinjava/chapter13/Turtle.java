@@ -6,7 +6,7 @@ import java.util.Formatter;
 import lombok.AllArgsConstructor;
 
 /**
- * TODO
+ * string formatter
  *
  * @author yangwh@yunrong.cn
  * @version V3.0
