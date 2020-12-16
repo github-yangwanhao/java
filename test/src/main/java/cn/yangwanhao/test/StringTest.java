@@ -1,6 +1,12 @@
 package cn.yangwanhao.test;
 
+import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
+
 import org.apache.commons.lang3.StringUtils;
+
+import com.google.common.collect.Lists;
 
 /**
  * description
@@ -51,5 +57,9 @@ public class StringTest {
 
         String str = "HLD001";
         System.out.println(StringUtils.rightPad(str, 10, "X"));
+        String filePath = "/CLMP/2020/12/04/qwerty.pdf";
+        String filePrefix = filePath.substring(filePath.lastIndexOf("/")+1, filePath.lastIndexOf("."));
+        String fileSuffix = filePath.substring(filePath.lastIndexOf(".")+1);
+        System.out.println(filePrefix + " " + fileSuffix);
     }
 }
