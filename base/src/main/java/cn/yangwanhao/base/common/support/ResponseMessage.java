@@ -38,7 +38,7 @@ public class ResponseMessage<E> implements Serializable {
         this(code, message, null);
     }
 
-    public Boolean isSuccess() {
+    public Boolean doSuccess() {
         return this.code.equals(SUCCESS_CODE);
     }
 
