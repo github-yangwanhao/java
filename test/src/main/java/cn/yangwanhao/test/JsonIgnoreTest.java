@@ -23,7 +23,9 @@ public class JsonIgnoreTest {
         bean.setAaa("aaa");
         bean.setBbb(1);
         bean.setCcc(new byte[] {'1', '2', '3', '4', '5', '6'});
+        bean.setDdd('a');
         System.out.println(JSONObject.toJSONString(bean.getCcc()));
+        System.out.println(JSONObject.toJSONString(bean.getDdd()));
         System.out.println(JSONObject.toJSONString(bean));
     }
 
@@ -40,4 +42,6 @@ class Bean implements Serializable {
 
     @JSONField(serialize = false)
     private byte[] ccc;
+
+    private transient char ddd;
 }
